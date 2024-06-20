@@ -7,6 +7,7 @@ class RedBlackTree: public Tree<T>
         void INORDER(struct Node<T> *root);
         void PREORDER(struct Node<T> *root);
         void POSTORDER(struct Node<T> *root);
+        void HEIGHT(struct Node<T> *root);
     public:
         RedBlackTree();
         void insertNode(T);
@@ -15,6 +16,7 @@ class RedBlackTree: public Tree<T>
         void preorderTraversal();
         void postorderTraversal();
         bool search();
+        void height();
         bool isEmpty();
         void balancingFactor();
         void singleRotation();

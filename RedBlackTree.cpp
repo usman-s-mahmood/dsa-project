@@ -66,6 +66,12 @@ bool RedBlackTree<T>::search()
 }
 
 template <class T>
+void RedBlackTree<T>::height()
+{
+    
+}
+
+template <class T>
 void RedBlackTree<T>::balancingFactor()
 {
     
@@ -144,4 +150,10 @@ void RedBlackTree<T>::POSTORDER(struct Node<T> *root)
         POSTORDER(root->rightChild);
         cout << root->data << ' ';
     }
+}
+
+template <class T>
+void RedBlackTree<T>::HEIGHT(struct Node<T> *root)
+{
+    
 }

@@ -43,6 +43,7 @@ class RedBlackTree: public Tree<T>
         void INORDER(struct Node<T> *root);
         void PREORDER(struct Node<T> *root);
         void POSTORDER(struct Node<T> *root);
+        void HEIGHT(struct Node<T> *root);
     public:
         RedBlackTree();
         void insertNode(T);
@@ -51,6 +52,7 @@ class RedBlackTree: public Tree<T>
         void preorderTraversal();
         void postorderTraversal();
         bool search();
+        void height();
         bool isEmpty();
         void balancingFactor();
         void singleRotation();
@@ -126,6 +128,12 @@ template <class T>
 bool RedBlackTree<T>::search()
 {
     return false;
+}
+
+template <class T>
+void RedBlackTree<T>::height()
+{
+    
 }
 
 template <class T>
@@ -207,4 +215,18 @@ void RedBlackTree<T>::POSTORDER(struct Node<T> *root)
         POSTORDER(root->rightChild);
         cout << root->data << ' ';
     }
+}
+
+
+template <class T>
+void RedBlackTree<T>::HEIGHT(struct Node<T> *root)
+{
+    
+}
+
+
+int main()
+{
+    RedBlackTree<int> obj;
+    return 0;
 }
