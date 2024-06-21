@@ -15,7 +15,7 @@ class RedBlackTree: public Tree<T>
         void inorderTraversal();
         void preorderTraversal();
         void postorderTraversal();
-        bool search();
+        bool search(T);
         void height();
         bool isEmpty();
         void balancingFactor();

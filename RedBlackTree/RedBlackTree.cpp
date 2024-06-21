@@ -60,7 +60,7 @@ bool RedBlackTree<T>::isEmpty()
 }
 
 template <class T>
-bool RedBlackTree<T>::search()
+bool RedBlackTree<T>::search(T value)
 {
     return false;
 }

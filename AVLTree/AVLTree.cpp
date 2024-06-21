@@ -60,7 +60,7 @@ bool AVLTree<T>::isEmpty()
 }
 
 template <class T>
-bool AVLTree<T>::search()
+bool AVLTree<T>::search(T value)
 {
     return false;
 }
