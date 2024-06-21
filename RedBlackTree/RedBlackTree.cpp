@@ -62,6 +62,28 @@ bool RedBlackTree<T>::isEmpty()
 template <class T>
 bool RedBlackTree<T>::search(T value)
 {
+    if (!isEmpty())
+    {
+        if (value == this->root->data)
+        {
+            cout << "Value found at root Node!" << endl;
+            return true;
+        }
+        struct Node<T> *temp = this->root;
+        while (temp != nullptr)
+        {
+            if (value == temp->data)
+            {
+                cout << "Value found in the tree!" << endl;
+                return true;
+            }
+            else if (value < temp->data)
+                temp = temp->leftChild; 
+            else
+                temp = temp->rightChild; 
+        }
+    }
+    cout << "Tree is empty! Value is not found" << endl;
     return false;
 }
 

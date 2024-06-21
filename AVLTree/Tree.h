@@ -11,7 +11,6 @@ struct Node
     T data;
     struct Node<T> *leftChild;
     struct Node<T> *rightChild;
-    char color;
 };
 
 template <class T>
