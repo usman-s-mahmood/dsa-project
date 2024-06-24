@@ -11,6 +11,7 @@ struct Node
     T data;
     struct Node<T> *leftChild;
     struct Node<T> *rightChild;
+    int height;
 };
 
 template <class T>
