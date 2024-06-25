@@ -8,7 +8,6 @@ This project contains a header file *Tree.h* that contains the structure of Node
 
 The concrete class of self balancing tree contains the following functions:
 
-
 **Insertion:**
 
 Inserting a new node into the AVL tree while maintaining the AVL property, i.e., ensuring that the balance factor of every node is either -1, 0, or 1.
@@ -66,3 +65,11 @@ Finding the node with the minimum or maximum key value in the AVL tree. These op
 **Successor and Predecessor Finding:**
 
 Finding the successor (smallest key greater than the given key) or predecessor (largest key smaller than the given key) of a node in the AVL tree.
+
+---
+
+
+
+<h3>Main Function for driving ADT Code</h3>
+
+The main function is a menu driven  code that allows the user to test all the edge cases of  this ADT. An object of AVLTree class is made at initial and then the control is transfered to a while that will show user with the driver code and exit procedure
