@@ -72,4 +72,14 @@ Finding the node with the minimum or maximum key value in the AVL tree. These op
 
 Finding the successor (smallest key greater than the given key) or predecessor (largest key smaller than the given key) of a node in the AVL tree.
 
+<<<<<<< HEAD
 <hr>
+=======
+---
+
+
+
+<h3>Main Function for driving ADT Code</h3>
+
+The main function is a menu driven  code that allows the user to test all the edge cases of  this ADT. An object of AVLTree class is made at initial and then the control is transfered to a while that will show user with the driver code and exit procedure
+>>>>>>> f50365c95f1f80928d5298140b039b4edc4ca14a
