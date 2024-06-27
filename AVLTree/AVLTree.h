@@ -8,6 +8,10 @@ class AVLTree: public Tree<T>
         void PREORDER(struct Node<T> *root);
         void POSTORDER(struct Node<T> *root);
         void HEIGHT(struct Node<T> *root);
+        T max_value_pro(struct Node<T> *root);
+        T min_value_pro(struct Node<T> *root);
+        void tree_size(struct Node<T> *root, int &size);
+        void convert_to_array(struct Node<T> *root, int &itr, int *arr);
     public:
         AVLTree();
         void insertNode(T);
@@ -22,9 +26,9 @@ class AVLTree: public Tree<T>
         void singleRotation();
         void doubleRotation();
         void diameter();
-        void maxValue();
-        void minValue();
-        void successor(T);
+        T maxValue();
+        T minValue();
+        void successor(T); // use array technique to find successor and predecessor of it
         void predecessor(T);
         ~AVLTree()
         {

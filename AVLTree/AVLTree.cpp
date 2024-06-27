@@ -117,18 +117,50 @@ void AVLTree<T>::diameter()
     
 }
 
+
 template <class T>
-void AVLTree<T>::maxValue()
+T AVLTree<T>::max_value_pro(struct Node<T> *root)
 {
-    
+    if (root->right != nullptr)
+        return max_value_pro(root->right);
+    else
+        return root->data;
 }
 
 template <class T>
-void AVLTree<T>::minValue()
+T AVLTree<T>::min_value_pro(struct Node<T> *root)
 {
-    
+    if (root->left != nullptr)
+        return min_value_pro(root->left);
+    else
+        return root->data;
 }
 
+template <class T>
+T AVLTree<T>::maxValue()
+{
+    if (!isEmpty())
+    {
+        T max = max_value_pro(this->root);
+        cout << "Max Value is: " << max << endl;
+        return max;
+    }
+    cout << "Invalid Operation! Tree is empty" << endl;
+    return T();
+}
+
+template <class T>
+T AVLTree<T>::minValue()
+{
+    if (!isEmpty())
+    {
+        T min = min_value_pro(this->root);
+        cout << "Minimum value is: " << min << endl;
+        return min;
+    }
+    cout << "Invalid Operation! Tree is empty" << endl;
+    return T();
+}
 template <class T>
 void AVLTree<T>::successor(T)
 {
