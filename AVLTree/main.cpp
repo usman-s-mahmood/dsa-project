@@ -31,8 +31,7 @@ int main()
             int value;
             cin >> value;
             obj.insertNode(value);
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 2)
         {
@@ -40,8 +39,7 @@ int main()
             int value;
             cin >> value;
             obj.deleteNode(value);
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 3)
         {
@@ -49,68 +47,57 @@ int main()
             int value;
             cin >> value;
             obj.search(value);
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 4)
         {
             obj.inorderTraversal();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 5)
         {
             obj.preorderTraversal();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 6)
         {
             obj.postorderTraversal();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 7)
         {
             obj.height();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 8)
         {
             obj.balancingFactor();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 9)
         {
             obj.singleRotation();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 10)
         {
             obj.doubleRotation();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 11)
         {
             obj.diameter();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 12)
         {
             obj.minValue();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 13)
         {
             obj.maxValue();
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 14)
         {
@@ -119,8 +106,7 @@ int main()
             int value;
             cin >> value;
             obj.successor(value);
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 15)
         {
@@ -129,8 +115,7 @@ int main()
             int value;
             cin >> value;
             obj.successor(value);
-            cout << "press any key to continue" << endl;
-            getch();
+            system("pause");
         }
         else if (ch == 0)
         {

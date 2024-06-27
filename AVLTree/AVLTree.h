@@ -4,32 +4,38 @@ template <class T>
 class AVLTree: public Tree<T>
 {
     protected:
-        void INORDER(struct Node<T> *root);
-        void PREORDER(struct Node<T> *root);
-        void POSTORDER(struct Node<T> *root);
+        void INORDER(struct Node<T> *root); // done
+        void PREORDER(struct Node<T> *root); // done
+        void POSTORDER(struct Node<T> *root); // done
         void HEIGHT(struct Node<T> *root);
-        T max_value_pro(struct Node<T> *root);
-        T min_value_pro(struct Node<T> *root);
-        void tree_size(struct Node<T> *root, int &size);
-        void convert_to_array(struct Node<T> *root, int &itr, int *arr);
+        T max_value_pro(struct Node<T> *root); // done
+        T min_value_pro(struct Node<T> *root); // done
+        void tree_size(struct Node<T> *root, int &size); // done
+        void convert_to_array(struct Node<T> *root, int &itr, int *arr); // done
+        void SEARCH(struct Node<T> *root, T value, bool &check); // done
+        void PARENT(struct Node<T> *root, T value, T &parent_value); // done
+        void LEFTCHILD(struct Node<T> *root, T value, T &child_value); // done 
+        void RIGHTCHILD(struct Node<T> *root, T value, T &child_value); // done
     public:
         AVLTree();
-        void insertNode(T);
-        bool deleteNode(T);
-        void inorderTraversal();
-        void preorderTraversal();
-        void postorderTraversal();
-        bool search(T);
-        void height();
-        bool isEmpty();
+        void insertNode(T); // done
+        bool deleteNode(T); // done
+        void inorderTraversal(); // done
+        void preorderTraversal(); // done
+        void postorderTraversal(); // done
+        bool search(T); // done
+        void height(); 
+        bool isEmpty(); // done
         void balancingFactor();
         void singleRotation();
         void doubleRotation();
         void diameter();
-        T maxValue();
-        T minValue();
-        void successor(T); // use array technique to find successor and predecessor of it
-        void predecessor(T);
+        T maxValue(); // done
+        T minValue(); // done
+        void successor(T); // REM: use array technique to find successor and predecessor of it by converting non linear D.S. to linear D.S. // done
+        void predecessor(T); // done
+        T right_child(T); // done
+        T left_child(T); // done
         ~AVLTree()
         {
             Tree<T>::~Tree();

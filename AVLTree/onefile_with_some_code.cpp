@@ -1,4 +1,80 @@
-#include "AVLTree.h"
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+template <class T>
+struct Node
+{
+    T data;
+    struct Node<T> *leftChild;
+    struct Node<T> *rightChild;
+    int height;
+};
+
+template <class T>
+class Tree
+{
+    protected:
+        struct Node<T> *root;
+    public:
+        Tree();
+        virtual void insertNode(T) = 0;
+        virtual bool deleteNode(T) = 0;
+        ~Tree()
+        {
+            delete this->root;
+        }
+};
+
+template <class T>
+Tree<T>::Tree()
+{
+    this->root = nullptr;
+}
+
+template <class T>
+class AVLTree: public Tree<T>
+{
+    protected:
+        void INORDER(struct Node<T> *root); // done
+        void PREORDER(struct Node<T> *root); // done
+        void POSTORDER(struct Node<T> *root); // done
+        void HEIGHT(struct Node<T> *root);
+        T max_value_pro(struct Node<T> *root); // done
+        T min_value_pro(struct Node<T> *root); // done
+        void tree_size(struct Node<T> *root, int &size); // done
+        void convert_to_array(struct Node<T> *root, int &itr, int *arr); // done
+        void SEARCH(struct Node<T> *root, T value, bool &check); // done
+        void PARENT(struct Node<T> *root, T value, T &parent_value); // done
+        void LEFTCHILD(struct Node<T> *root, T value, T &child_value); // done 
+        void RIGHTCHILD(struct Node<T> *root, T value, T &child_value); // done
+    public:
+        AVLTree();
+        void insertNode(T); // done
+        bool deleteNode(T); // done
+        void inorderTraversal(); // done
+        void preorderTraversal(); // done
+        void postorderTraversal(); // done
+        bool search(T); // done
+        void height(); 
+        bool isEmpty(); // done
+        void balancingFactor();
+        void singleRotation();
+        void doubleRotation();
+        void diameter();
+        T maxValue(); // done
+        T minValue(); // done
+        void successor(T); // REM: use array technique to find successor and predecessor of it by converting non linear D.S. to linear D.S. // done
+        void predecessor(T); // done
+        T right_child(T); // done
+        T left_child(T); // done
+        ~AVLTree()
+        {
+            Tree<T>::~Tree();
+        }
+};
 
 template <class T>
 AVLTree<T>::AVLTree():
@@ -391,4 +467,136 @@ T AVLTree<T>::left_child(T value)
     }
     cout << "Invalid Operation! Tree is empty" << endl;
     return T();
+}
+
+
+int main()
+{
+    AVLTree<int> obj;
+    int ch = -1;
+    while (ch != 0)
+    {
+        cout << "Welcome to AVL Tree Demonstration System!" << endl
+            << "1. To insert a value" << endl
+            << "2. To delete a value" << endl
+            << "3. To search a value" << endl
+            << "4. To perform Inorder Traversal" << endl
+            << "5. To perform Preorder Traversal" << endl
+            << "6. To perform Postorder Traversal" << endl
+            << "7. To calculate height of tree" << endl
+            << "8. To calculate balancing factor of tree" << endl
+            << "9. To perform single rotation" << endl
+            << "10. To perform double rotation" << endl
+            << "11. To calculate diameter of tree" << endl
+            << "12. To Find minimum element in tree" << endl
+            << "13. To Find maximum element in tree" << endl
+            << "14. To Find Successor of a node" << endl
+            << "15. To Find Predecessor of a node" << endl
+            << "0. To exit" << endl
+        << "Enter your Choice: ";
+        cin >> ch;
+        if (ch == 1)
+        {
+            cout << "Enter a value for insertion: ";
+            int value;
+            cin >> value;
+            obj.insertNode(value);
+            system("pause");
+        }
+        else if (ch == 2)
+        {
+            cout << "Enter a value for deletion: ";
+            int value;
+            cin >> value;
+            obj.deleteNode(value);
+            system("pause");
+        }
+        else if (ch == 3)
+        {
+            cout << "Enter a value for searching: ";
+            int value;
+            cin >> value;
+            obj.search(value);
+            system("pause");
+        }
+        else if (ch == 4)
+        {
+            obj.inorderTraversal();
+            system("pause");
+        }
+        else if (ch == 5)
+        {
+            obj.preorderTraversal();
+            system("pause");
+        }
+        else if (ch == 6)
+        {
+            obj.postorderTraversal();
+            system("pause");
+        }
+        else if (ch == 7)
+        {
+            obj.height();
+            system("pause");
+        }
+        else if (ch == 8)
+        {
+            obj.balancingFactor();
+            system("pause");
+        }
+        else if (ch == 9)
+        {
+            obj.singleRotation();
+            system("pause");
+        }
+        else if (ch == 10)
+        {
+            obj.doubleRotation();
+            system("pause");
+        }
+        else if (ch == 11)
+        {
+            obj.diameter();
+            system("pause");
+        }
+        else if (ch == 12)
+        {
+            obj.minValue();
+            system("pause");
+        }
+        else if (ch == 13)
+        {
+            obj.maxValue();
+            system("pause");
+        }
+        else if (ch == 14)
+        {
+            obj.inorderTraversal();
+            cout << "Enter a value within this range to check it's successor";
+            int value;
+            cin >> value;
+            obj.successor(value);
+            system("pause");
+        }
+        else if (ch == 15)
+        {
+            obj.inorderTraversal();
+            cout << "Enter a value within this range to check it's predecessor";
+            int value;
+            cin >> value;
+            obj.successor(value);
+            system("pause");
+        }
+        else if (ch == 0)
+        {
+            cout << "Program Terminated!" << endl;
+            break;
+        }
+        else
+        {
+            cout << "Invalid Option! Program Terminated" << endl;
+            break;
+        }
+    }
+    return 0;
 }
